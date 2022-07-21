@@ -1,0 +1,13 @@
+table {
+    width: 100%;
+}
+
+.blue {
+    color: #fff;
+    background-color: rgb(66, 139, 248);
+}
+
+.red {
+    color: #fff;
+    background-color: rgb(238, 13, 13);
+}

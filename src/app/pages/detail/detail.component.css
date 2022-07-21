@@ -1,0 +1,90 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    /* padding: 20px; */
+    border-radius: 20px;
+    width: 100%;
+}
+
+.col1 {
+    width: 600px;
+    padding: 90px 40px;
+}
+
+.col1 img {
+    width: 100%;
+    height: 90%;
+    object-fit: fill;
+}
+
+.col2 {
+    width: 500px;
+    padding: 90px 40px;
+}
+
+.col2 a {
+    all: none;
+
+}
+
+.col2 .des {
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.col2 .cod {
+    margin-top: 15px;
+    color: #878ea1;
+}
+
+.col2 .stock {
+    margin-top: 15px;
+    color: #7048ab;
+}
+
+.col2 .cont-ahora {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bolder;
+}
+
+.col2 .cont-ahora .price {
+    font-weight: bolder;
+}
+
+.cuotas {
+    margin-top: 15px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+
+
+.cuotas .simulador {
+    display: inline;
+    color: #009fe3;
+    border-bottom: 1px solid #009fe3;
+    font-weight: bold;
+    /* background-color: #7048ab; */
+}
+
+.cuotas .simulador:hover {
+    cursor: pointer;
+}
+
+.col2 button {
+    margin-top: 45px;
+    width: 100%;
+    background-color: #009fe3;
+    border: 0;
+    border-radius: 8px;
+    padding: 15px 0;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}

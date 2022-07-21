@@ -1,0 +1,43 @@
+<nav class="nav">
+    <div class="nav-container">
+
+        <a href=""><img src="https://sf-cyber.s3.amazonaws.com/comercios/c-618ecf0565fda.png" height="50px" alt=""></a>
+        <div class="nav_buscador">
+            <input type="text" placeholder="Buscar Productos">
+            <button>Buscar</button>
+        </div>
+
+        <div class="spacer"></div>
+        <button class="nav_carrito"> 0 productos </button>
+
+
+    </div>
+
+</nav>
+
+<nav class="nav-categorias">
+    <div class="nav-cat-container">
+        <ul>
+            <li (click)="onSelect(0,'')" routerLink="/">Todo</li>
+            <div *ngFor="let category of categories">
+                <li [matMenuTriggerFor]="menu">{{category.name}}</li>
+           
+                <mat-menu #menu>
+                    <p class="categoria-p"  (click)="onSelect(category.id,'category')">{{category.name | titlecase}}</p>
+                    <div class="linea"></div>
+                    <div class="card-menu">
+                        <hr>
+                        <div class="subcategoria" *ngFor="let subcategory of category.subcategories">
+                            <p class="subcategoria-p" (click)="onSelect(subcategory.id, 'subcategory')"> {{subcategory.name | titlecase}}</p>
+
+                            <p class="taxonomia-p" *ngFor="let taxonomi of subcategory.taxonomies" (click)="onSelect(taxonomi.id, 'taxonomi')">
+                                {{taxonomi.name}} </p>
+                            <br>
+                        </div>
+                    </div>
+                </mat-menu>
+            </div>
+
+        </ul>
+    </div>
+</nav>

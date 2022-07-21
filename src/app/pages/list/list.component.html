@@ -1,0 +1,35 @@
+<div class="background">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="header">
+        <p>Resultados encontrados {{fproducts.length}}</p>
+    </div>
+    <br>
+
+    <div class="lista">
+
+        <div class="card" *ngFor="let product of fproducts">
+            <div class="top" [routerLink]="['/detail',product.id]">
+                <img class="card_img"
+                    [src]="product.imageConverted"
+                    [alt]="product.name">
+                <p class="card_name">{{product.name}}</p>
+                <p class="card_descrip">{{product.description}}</p>
+                <p class="card_price">S/. {{product.price | number:'0.2-2'}}</p>
+            </div>
+
+            <button>Agregar</button>
+        </div>
+
+
+
+    </div>
+
+
+
+</div>

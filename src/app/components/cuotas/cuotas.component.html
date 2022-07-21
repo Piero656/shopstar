@@ -1,0 +1,51 @@
+<div class="container">
+    <button class="x" (click)="close()">
+        <span class="material-symbols-outlined">
+            close
+        </span>
+    </button>
+
+    <br>
+
+    <h2>Divide en cuotas con una tasa preferencial</h2>
+    <div class="margin-bottom"></div>
+    <p>
+        Busca la opción de “Divídelo en cuotas” cuando vayas a pagar tu compra y aprovecha este beneficio.
+    </p>
+    <div class="margin-bottom"></div>
+
+    <h3>
+        Precio del producto
+    </h3>
+    <div class="margin-bottom"></div>
+
+    <div class="big-price">
+        S/. {{data.price | number: '0.2-2'}}
+    </div>
+
+    <div class="cuotas" *ngFor="let cuota of data.cuotas">
+        <div class="meses">
+            {{cuota.month}} meses
+        </div>
+        <div class="precio">
+            S/. {{cuota.amount | number: '0.2-2' }}/mes
+        </div>
+    </div>
+
+    <br>
+
+    <p>
+        TEA 25%
+    </p>
+    <p>
+        No incluye el precio de envío.
+    </p>
+
+    <button class="entendido" (click)="close()" >Entendido</button>
+    <br>
+
+    <div class="line"></div>
+
+    <br>
+
+</div>

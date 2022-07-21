@@ -1,0 +1,58 @@
+<br>
+<br>
+<br>
+
+<h1>Administrador</h1>
+<br>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let product"> {{product.id}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let product"> {{product.name}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="taxonomy">
+        <th mat-header-cell *matHeaderCellDef> Taxonomía </th>
+        <td mat-cell *matCellDef="let product"> {{product.taxonomy.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="subcategory">
+        <th mat-header-cell *matHeaderCellDef> Subcategoría </th>
+        <td mat-cell *matCellDef="let product"> {{product.taxonomy.subCategory.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef> Categoría </th>
+        <td mat-cell *matCellDef="let product"> {{product.taxonomy.subCategory.category.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Precio </th>
+        <td mat-cell *matCellDef="let product"> S/. {{product.price | number:'0.2-2'}} </td>
+    </ng-container>
+
+
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let product">
+            <button mat-raised-button class="blue" (click)="openDialog(product)">Update</button>
+            &nbsp;&nbsp;&nbsp;
+            <button mat-raised-button class="red" (click)="deleteProduct(product.id)">Delete</button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator class="mat-elevation-z8" [pageSizeOptions]="[10, 15, 20]" aria-label="Select page of users">
+</mat-paginator>
