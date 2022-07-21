@@ -55,6 +55,7 @@ export class UpdateProductComponent implements OnInit {
   onChangeSubCategory(idSubCategory: string) {
 
     this.product.taxonomy = 0;
+    
 
     this.taxonomies = this.subcategories
       .filter(subcat => subcat.id == Number(idSubCategory))[0].taxonomies;
