@@ -18,7 +18,7 @@ export class ListComponent implements OnInit, OnDestroy {
 
   constructor(
     private productService: ProductService,
-    private router : Router
+    private router: Router
   ) {
     this.getAllProducts();
   }
@@ -66,6 +66,10 @@ export class ListComponent implements OnInit, OnDestroy {
   nav() {
     this.productService.catSelected.complete();
     this.router.navigateByUrl('admin');
+  }
+
+  agregar(product: any) {
+    this.productService.addCarrito.emit(product);
   }
 
 }

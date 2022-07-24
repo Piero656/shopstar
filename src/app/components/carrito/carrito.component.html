@@ -1,0 +1,53 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let product"> {{product.id}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let product"> {{product.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef> Imagen </th>
+        <td mat-cell *matCellDef="let product"> <img [src]="product.imageConverted" alt="" width="50px" height="50px">
+        </td>
+    </ng-container>
+
+
+    <!-- <ng-container matColumnDef="taxonomy">
+        <th mat-header-cell *matHeaderCellDef> Taxonomía </th>
+        <td mat-cell *matCellDef="let product"> {{product.taxonomy.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="subcategory">
+        <th mat-header-cell *matHeaderCellDef> Subcategoría </th>
+        <td mat-cell *matCellDef="let product"> {{product.taxonomy.subCategory.name}} </td>
+    </ng-container> -->
+    <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef> Categoría </th>
+        <td mat-cell *matCellDef="let product"> {{product.taxonomy.subCategory.category.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Precio </th>
+        <td mat-cell *matCellDef="let product"> S/. {{product.price | number:'0.2-2'}} </td>
+    </ng-container>
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<br>
+
+<div class="col-12">
+
+    <h4 class="text-end">Total a pagar: S/. {{total | number:'0.2-2'}}</h4>
+
+</div>

@@ -24,11 +24,12 @@
             <p class="price">S/. {{product.price | number:'0.2-2'}}</p>
         </div>
         <div class="cuotas" (click)="openDialog()">
-            <p *ngIf="cuotas.length > 0">Págalo en {{cuotas[3].month}} cuotas de <strong>S/ {{cuotas[3].amount | number: '0.2-2'}}</strong></p>
+            <p *ngIf="cuotas.length > 0">Págalo en {{cuotas[3].month}} cuotas de <strong>S/ {{cuotas[3].amount | number:
+                    '0.2-2'}}</strong></p>
             <p class="simulador">Simulador de cuotas</p>
         </div>
 
-        <button>Agregar al carrito</button>
+        <button (click)="agregar(product)">Agregar al carrito</button>
 
     </div>
 

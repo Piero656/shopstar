@@ -59,4 +59,8 @@ export class DetailComponent implements OnInit {
     );
   }
 
+  agregar(product: any) {
+    this.productService.addCarrito.emit(product);
+  }
+
 }

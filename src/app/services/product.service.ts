@@ -11,7 +11,10 @@ export class ProductService {
 
   products: Array<any> = [];
 
+  carrito: Array<any> = [];
+
   catSelected = new EventEmitter<any>();
+  addCarrito = new EventEmitter<any>();
 
   baseUrl: string = `${environment.baseUrl}/products`;
 

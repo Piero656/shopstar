@@ -17,6 +17,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { UpdateProductComponent } from './components/update-product/update-product.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FormsModule } from '@angular/forms';
     CuotasComponent,
     AdminComponent,
     UpdateProductComponent,
+    CarritoComponent,
     
   ],
   imports: [
